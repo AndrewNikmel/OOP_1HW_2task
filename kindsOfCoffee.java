@@ -26,6 +26,7 @@ public class kindsOfCoffee {
         this.temperature = temperature;
         this.cost = cost;
     }
+
     @Override
     public String toString() {
         // TODO Auto-generated method stub
