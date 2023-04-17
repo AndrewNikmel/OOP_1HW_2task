@@ -1,11 +1,6 @@
-import java.util.Scanner;
-
-/**
- * main
- */
 public class main {
 
-    public static void coffee(String[] args) {
+    public static void main(String[] args) {
         coffeeMachine coffeeMachine = new coffeeMachine();
         coffeeMachine.addCoffee(new kindsOfCoffee("Эспрессо", 35, 80, 90))
             .addCoffee(new kindsOfCoffee("Американо", 150, 85, 120))
@@ -21,17 +16,14 @@ public class main {
             for (int i = 0; i < coffeeMachine.getList().size(); i++) {
                 System.out.println(coffeeMachine.getList().get(i));
             }
-            System.out.println("---Какой кофе Вас интересует?---\n");
-            Scanner scan = new Scanner(System.in);
-            String input = scan.nextLine();
-            scan.close();
-            kindsOfCoffee found = coffeeMachine.findCoffee(input);
-                if (coffeeMachine.findCoffee(input).equals(null)) {
-                    System.out.println("Увы, такого кофе нет");                
-                } else {
-                    System.out.println("Отличный выбор!");
-                    kindsOfCoffee sold = coffeeMachine.selectCoffee(found);
-                    System.out.println(sold);
-                }
+            System.out.println("---Какой кофе Вас интересует?---");
+            kindsOfCoffee found = coffeeMachine.findCoffee("Чай");
+            kindsOfCoffee sold = coffeeMachine.selectCoffee(found);
+            System.out.printf("Ваш выбор: %s, с Вас %d рублей\n", sold, coffeeMachine.getAmount());
+            // System.out.println(coffeeMachine.getAmount());
+            System.out.println("---В нашем ассортименте остались:---");
+            for (int i = 0; i < coffeeMachine.getList().size(); i++) {
+                System.out.println(coffeeMachine.getList().get(i));
+            }
     }
 }

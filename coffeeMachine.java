@@ -36,7 +36,7 @@ public class coffeeMachine {
             return coffeeSelected;
 
         } catch (Exception except) {
-            throw new RuntimeException("Увы, такого кофе нет");
+            throw new RuntimeException("Увы, такого кофе нет"); // косяк
         }
     }
 }
