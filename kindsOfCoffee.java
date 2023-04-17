@@ -29,8 +29,7 @@ public class kindsOfCoffee {
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return String.format("Напиток %s, объемом %d мл. (%d гр.), стоит %d руб.", name, volume, temperature, cost);
+        return String.format("- %s, объемом %d мл. (%d градусов), стоит %d руб.", name, volume, temperature, cost);
     }
 
 }
